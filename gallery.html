@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - GalactiLearn</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        background: black;
+        overflow-x: hidden;
+      }
+
+      /* Background video */
+      video.bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 40px;
+        background: rgba(0, 0, 0, 0.45);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .logo {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #a5b4fc;
+        text-shadow: 0 0 12px rgba(165,180,252,0.15);
+        letter-spacing: 1px;
+      }
+
+      .fancy {
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        color: #a5b4fc;
+        text-shadow: 0 0 12px rgba(165,180,252,0.3);
+        margin-right: 3px;
+      }
+
+      .user-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: url("https://cdn-icons-png.flaticon.com/512/847/847969.png") center/cover no-repeat;
+        border: 2px solid rgba(255,255,255,0.15);
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        padding: 14px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 6px 10px;
+        border-radius: 6px;
+        transition: background-color 0.18s, color 0.18s, transform 0.18s;
+      }
+
+      nav a:hover {
+        color: #0ff;
+        transform: translateY(-2px);
+      }
+
+      /* Gallery Layout */
+      header h1 {
+        text-align: center;
+        padding: 25px 0;
+        font-size: 2.8em;
+        font-weight: bold;
+        color: #a5b4fc;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      }
+
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 60px 40px;
+      }
+
+      .gallery-item {
+        flex: 1 1 300px;
+        max-width: 350px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 15px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .gallery-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .gallery-info h3 {
+        color: #a5b4fc;
+        margin-bottom: 10px;
+        font-size: 1.4em;
+      }
+
+      .gallery-info p {
+        font-size: 1em;
+        color: #ddd;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 🌌 Background video -->
+    <video autoplay muted loop class="bg-video">
+      <source src="C:\Users\monus\OneDrive\Desktop\web tech\2nd sem\space\vid1.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+
+    <!-- 🪐 Header -->
+    <header>
+      <div class="logo"><span class="fancy">Galacti</span>Learn</div>
+      <div class="user-icon"></div>
+    </header>
+
+    <!-- 🧭 Navigation -->
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="courses.html">Courses</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="explore.html">Explore</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <!-- 🌠 Gallery -->
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="img 1.jpg" alt="Galaxy Nebula" />
+        <div class="gallery-info">
+          <h3>Andromeda Galaxy</h3>
+          <p>
+            The closest spiral galaxy to the Milky Way, containing over a
+            trillion stars and stretching 220,000 light-years across.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img2.jpg" alt="Black Hole" />
+        <div class="gallery-info">
+          <h3>Black Hole</h3>
+          <p>
+            A mysterious cosmic region with gravity so strong that even light
+            cannot escape from it.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img3.jpg" alt="Supernova" />
+        <div class="gallery-info">
+          <h3>Supernova Explosion</h3>
+          <p>
+            A powerful stellar explosion marking the end of a massive star’s
+            life, creating stunning visuals and heavy elements.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img6.jpg" alt="Planet" />
+        <div class="gallery-info">
+          <h3>Exoplanet Kepler-452b</h3>
+          <p>
+            An Earth-like planet orbiting a sun-like star, often called “Earth’s
+            cousin” due to its similarities.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img7.jpeg" alt="Milky Way" />
+        <div class="gallery-info">
+          <h3>The Milky Way</h3>
+          <p>
+            Our home galaxy — a vast collection of billions of stars, nebulae,
+            and mysterious dark matter.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img8.jpg" alt="Astronaut" />
+        <div class="gallery-info">
+          <h3>Human in Space</h3>
+          <p>
+            Astronauts exploring the unknown frontiers, pushing human knowledge
+            beyond Earth's limits.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

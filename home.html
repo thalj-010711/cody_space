@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - GalactiLearn</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+        color: white;
+      }
+
+      /* Background Video */
+      video.bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 40px;
+        background: rgba(0, 0, 0, 0.45);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .logo {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #a5b4fc;
+        text-shadow: 0 0 12px rgba(165,180,252,0.15);
+        letter-spacing: 1px;
+      }
+
+      .fancy {
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        color: #a5b4fc;
+        text-shadow: 0 0 12px rgba(165,180,252,0.3);
+        margin-right: 3px;
+      }
+
+      .user-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: url("https://cdn-icons-png.flaticon.com/512/847/847969.png") center/cover no-repeat;
+        border: 2px solid rgba(255,255,255,0.15);
+      }
+
+      /* Navigation Bar */
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        padding: 14px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 6px 10px;
+        border-radius: 6px;
+        transition: background-color 0.18s, color 0.18s, transform 0.18s;
+      }
+
+      nav a:hover {
+        color: #0ff;
+        transform: translateY(-2px);
+      }
+
+      /* Slideshow */
+      .slideshow-container {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        height: 85vh;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .slide {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Arrow Buttons */
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.5em;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 18px;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.3s;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .prev { left: 20px; }
+      .next { right: 20px; }
+
+      /* Dots */
+      .dots {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active {
+        background-color: #a5b4fc;
+      }
+
+      /* Flex Info Section */
+      .info-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 60px;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .info-text {
+        flex: 1;
+        min-width: 320px;
+      }
+
+      .info-text h2 {
+        font-size: 3em;
+        color: #a5b4fc;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .info-text p {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+
+      .info-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .info-image img {
+        width: 90%;
+        border-radius: 15px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 🌌 Background Video -->
+    <video autoplay muted loop class="bg-video">
+      <source src="C:\Users\monus\OneDrive\Desktop\web tech\2nd sem\space\vid3.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+
+    <!-- 🚀 Header -->
+    <header>
+      <div class="logo"><span class="fancy">Galacti</span>Learn</div>
+      <div class="user-icon"></div>
+    </header>
+
+    <!-- 🧭 Navigation -->
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="courses.html">Courses</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="explore.html">Explore</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <!-- 🪐 Slideshow -->
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="img3.jpg" alt="Galaxy 1" />
+      </div>
+      <div class="slide fade">
+        <img src="img6.jpg" alt="Galaxy 2" />
+      </div>
+      <div class="slide fade">
+        <img src="img4.jpg" alt="Galaxy 3" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <!-- ⚪ Dots -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- 🌌 Info Section -->
+    <div class="info-section">
+      <div class="info-text">
+        <h2>Welcome to <span class="fancy">Galacti</span>Learn</h2>
+        <p>
+          Step into the universe of knowledge — explore galaxies, learn about
+          space, take interactive quizzes, and discover mysteries of the cosmos.
+          <span class="fancy">Galacti</span>Learn brings learning beyond boundaries with engaging visuals
+          and intuitive experiences.
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="img8.jpg" alt="Learning Universe" />
+      </div>
+    </div>
+
+    <!-- 🪐 JavaScript -->
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+        for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+        for (i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      setInterval(() => plusSlides(1), 3000);
+    </script>
+  </body>
+</html>
